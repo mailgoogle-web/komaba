@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="main.js"></script>
+<title>enter</title>
+<style>
+    #header{
+        width: 100%;
+        height:120px;
+        display: flex;
+        position: relative;
+        border-bottom:solid black 1px ;
+    }
+    #allow{
+        height: 40%;
+        position: absolute;
+        left:30px;
+        top: 31px;
+        
+    }
+    #boxes{
+        position: absolute;
+        height: 40%;
+        right: 30px;
+        top: 30px;
+    }
+    #main{
+        font-size: 160px;
+        text-align: center;
+        margin-bottom: 200px;
+    }
+    #main p{
+        margin:5px 0 5px 0;
+        font-family:Arial;
+    }
+    #space{
+        margin-top: 200px;
+    }
+     #maeoki{
+        font-size: 40px;
+        font-family:Arial;
+        margin: 150px 20px 0 20px;
+    }
+    #footer{
+        font-size: 40px;
+        font-family:Arial;
+        margin: 0 20px 0 20px;
+    }
+</style>
+</head>
+<body>
+    <div id="header">
+        <img src="allow.PNG" id="allow">
+        <img src="boxes.PNG" id="boxes">
+    </div>
+    
+    <div id="komaba">
+        <p>
+            入構申請を受領しました。入構時にスマホ等で本メールを身分証とともに提示してください。メールを印刷して提出しても結構です。本メールは申請当日のみ有効です。
+<br>
+<br>
++++-----------------------------+++<br>
+申請/利用予約：【入構する日】入構申請（入構当日に毎回必要。博物館訪問含む）<br>
+----------------<br>
+予約日時：<span id ="yyyy"></span>年<span id="mm"></span>月<span id ="dd"></span>日(<span id ="dfw"></span>) <span id ="hh"></span>時<span id ="min"></span>分<br>
+予約番号：IEB_210915_4410782940_1<br>
++++-----------------------------+++<br>
+<br>
++++-----------<br>
+  用務先（建物）   <br>
+選択肢の中から一つ選んでください（複数の用務がある場合は主な用務先を一カ所）<br>
+なお、学生による情報教育棟教室の使用、教員による21KOMCEE Westの教室の使用は  別途予約制  です。先に専用の予約フォームから申し込んでください。<br>
+*************************<br>
+  教科書の購入のために入構する方は、「【学生】その他、学生支援課・教務課から許可を得た理由での入構」を選択し、備考欄に「教科書の購入」などと記入してください。 <br>  
+ 教科書販売所　 コミュニケーションプラザ北館２階、多目的教室３<br>
+*************************<br>
++++-----------<br>
+  【学生・教職員】駒場図書館・駒場博物館<br>
++++-----------<br>
+  体温（朝） <br>
++++-----------<br>
+  37.0度未満／Less than 37.0 degrees Celsius<br>
++++-----------<br>
+  直近14日間の海外渡航履歴   <br>
+（直近14日間に海外渡航歴がある場合は入構できません）<br>
++++-----------<br>
+  なし<br>
+  <br>
+  <br>
+氏名：東大太郎 様<br>
+学生証番号/UTokyo Account ID：7192857469<br>
+所属（科類（前期課程）、学科（後期課程）、専攻（大学院）、部署(教職員)）：卓球部<br>
+<br>
++-------------------------+<br>
+ご予約のキャンセルはこちらから<br>
+https://select-type.com/rsv/cancel/?f=kDRuRchp5I4<br>
++-------------------------+<br>
+<br>
+東京大学教養学部・総合文化研究科<br>
+E-mail: komaba-booking-group@g.ecc.u-tokyo.ac.jp<br>
+<br>
+        </p>
+    </div>
+
+        
+    </div>
+    <script>
+        var today = new Date();
+        var tY = today.getFullYear();
+        var tM = today.getMonth()+1;
+        var tD = today.getDate();
+        var hour = today.getHours() ;	// 時
+        var minute = today.getMinutes() ;	// 分
+        var dayOfWeek = today.getDay() ;
+        var dayOfWeekStr = [ "日", "月", "火", "水", "木", "金", "土" ][dayOfWeek] ;
+        console.log(tD);
+
+        
+        
+
+        window.onload = function(){
+            if (minute<30){
+                minute=30;
+                new Date(minute);
+
+            }
+            else{
+                minute=0;
+                hour = hour +1;
+                new Date(minute);
+                new Date(hour);
+            }
+            
+            document.getElementById("yyyy").innerHTML= tY;
+            document.getElementById("mm").innerHTML= tM;
+            document.getElementById("dd").innerHTML= tD;
+            document.getElementById("hh").innerHTML= hour;
+            document.getElementById("min").innerHTML= minute;
+            document.getElementById("dfw").innerHTML= dayOfWeekStr;
+        };
+    </script>
+
+</body>
+</html>
